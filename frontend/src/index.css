@@ -279,6 +279,44 @@ code {
   color: #e9b8aa;
 }
 
+.message-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border-radius: 0;
+  border: 1px solid;
+  font-size: 0.95rem;
+}
+
+.message-box.error {
+  background: rgba(255, 178, 178, 0.1);
+  border-color: #ffb2b2;
+  color: #ffb2b2;
+}
+
+.message-box.success {
+  background: rgba(153, 239, 204, 0.1);
+  border-color: #99efcc;
+  color: #99efcc;
+}
+
+.message-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 12px;
+  line-height: 1;
+}
+
+.message-close:hover {
+  opacity: 0.7;
+}
+
 .form-message.success {
   color: #99efcc;
 }

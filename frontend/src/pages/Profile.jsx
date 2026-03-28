@@ -43,7 +43,18 @@ function Profile() {
         <section className="dashboard-section">
           <h2>Profile</h2>
           {loading && <p className="dashboard-empty">Loading profile...</p>}
-          {!loading && error && <p className="form-message error">{error}</p>}
+          {!loading && error && (
+            <div className="message-box error">
+              <span>{error}</span>
+              <button
+                className="message-close"
+                onClick={() => setError("")}
+                aria-label="Close error message"
+              >
+                ×
+              </button>
+            </div>
+          )}
           {!loading && user && (
             <>
               <p className="dashboard-meta">Name: {user.name}</p>

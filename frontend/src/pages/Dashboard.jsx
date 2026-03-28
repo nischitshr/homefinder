@@ -228,8 +228,30 @@ function Dashboard() {
           </div>
 
           {loading && <p className="dashboard-empty">Loading favourites...</p>}
-          {!loading && error && <p className="form-message error">{error}</p>}
-          {!loading && success && <p className="form-message success">{success}</p>}
+          {!loading && error && (
+            <div className="message-box error">
+              <span>{error}</span>
+              <button
+                className="message-close"
+                onClick={() => setError("")}
+                aria-label="Close error message"
+              >
+                ×
+              </button>
+            </div>
+          )}
+          {!loading && success && (
+            <div className="message-box success">
+              <span>{success}</span>
+              <button
+                className="message-close"
+                onClick={() => setSuccess("")}
+                aria-label="Close success message"
+              >
+                ×
+              </button>
+            </div>
+          )}
 
           {!loading && favouriteCards.length === 0 ? (
             <p className="dashboard-empty">No favourites yet. Add a property ID.</p>
